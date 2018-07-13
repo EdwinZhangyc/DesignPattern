@@ -1,8 +1,6 @@
 package com.zyc.factory.abstractfactory;
 
 
-import com.zyc.factory.method.Pizza;
-
 public abstract class PizzaStore {
 
 
