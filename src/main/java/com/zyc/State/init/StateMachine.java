@@ -1,4 +1,4 @@
-package com.zyc.State;
+package com.zyc.State.init;
 
 public class StateMachine {
 
