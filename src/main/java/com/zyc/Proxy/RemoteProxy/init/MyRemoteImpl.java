@@ -1,0 +1,28 @@
+package com.zyc.Proxy.RemoteProxy.init;
+
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
+
+    public  MyRemoteImpl() throws RemoteException {}
+
+    @Override
+    public String sayHello() throws RemoteException {
+        return "Server says, hey";
+    }
+
+    public static void main(String[] args){
+
+        try {
+            MyRemote myRemote = new MyRemoteImpl();
+            Naming.rebind("RemoteHello", myRemote);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+}
